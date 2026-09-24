@@ -14,7 +14,7 @@ macOS 桌面宠物「开心宝宝」的安装包下载页。**这里只放安装
 用浏览器 / 微信 / 网盘下载，macOS 会给文件打上「隔离标记」，第一次打开会被系统拦一次。用 `curl` 下载则不会：
 
 ```bash
-curl -L -o ~/Downloads/KaixinBaobao.dmg \
+curl -L --progress-bar -o ~/Downloads/KaixinBaobao.dmg \
   "https://github.com/SUTNB/kaixin-baobao/releases/download/v0.3.1/KaixinBaobao-0.3.1-arm64.dmg"
 ```
 
@@ -35,6 +35,10 @@ curl -L -o ~/Downloads/KaixinBaobao.dmg \
 ```bash
 xattr -dr com.apple.quarantine /Applications/KaixinBaobao.app
 ```
+
+## 更新记录
+
+- **2026-09-24**：修复部分 Mac 上双击就崩溃（「意外退出」）的问题——包内签名不一致导致系统拒绝加载。**之前下载过的请重新下载**；同时把下载命令加上了进度条。
 
 ## 说明
 
